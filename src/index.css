@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 19.53px;
+  color: #2a384c;
+}
+.image-container {
+  width: 100%;
+}
+.image-container div {
+  position: unset !important;
+}
+.image-container div .image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+@layer components {
+  .font-h1 {
+    @apply font-ubuntu  font-medium text-[48px] leading-[48px];
+  }
+  .font-h2 {
+    @apply font-ubuntu font-medium text-[36px] leading-[40px];
+  }
+  .font-h3 {
+    @apply font-ubuntu font-medium text-[30px] leading-[36px];
+  }
+  .font-h4 {
+    @apply font-ubuntu font-medium text-[24px] leading-[32px];
+  }
+  .font-h5 {
+    @apply font-ubuntu font-medium text-[20px] leading-[28px];
+  }
+  .font-h6 {
+    @apply font-ubuntu font-medium text-[16px] leading-[24px];
+  }
+  p {
+    @apply text-neutral-400;
+  }
+  h1 {
+    @apply font-h1;
+  }
+  h2 {
+    @apply font-h2;
+  }
+  h3 {
+    @apply font-h3;
+  }
+  h4 {
+    @apply font-h4;
+  }
+  h5 {
+    @apply font-h5;
+  }
+  h6 {
+    @apply font-h6;
+  }
+
+  /* font body */
+
+  .medium {
+    @apply font-semibold;
+  }
+  .bold {
+    @apply font-bold;
+  }
+  /* .italic{
+    @apply italic ;
+  } */
+
+  .font-sm {
+    @apply text-[14px]  leading-[20px];
+  }
+  .font-xs {
+    @apply text-[12px]  leading-[16px];
+  }
+
+  .font-md {
+    @apply text-[16px]  leading-[24px];
+  }
+  .font-lg {
+    @apply text-[18px]  leading-[28px];
+  }
+
+  .font-template {
+    @apply font-xs sm:font-sm lg:font-md;
+  }
+
+  .font-xs-to-sm {
+    @apply font-xs md:font-sm;
+  }
+  .font-xs-to-md {
+    @apply font-xs md:font-sm lg:font-md;
+  }
+  .font-xs-to-lg {
+    @apply font-xs md:font-md lg:font-lg;
+  }
+  
+  .font-sm-to-md {
+    @apply font-sm  md:font-md;
+  }
+  .font-sm-to-lg {
+    @apply font-sm  md:font-md lg:font-lg;
+  }
+
+  .font-md-to-lg {
+    @apply font-md lg:font-lg;
+  }
+
+  .wrapper {
+    @apply flex justify-center;
+  }
+
+  .container {
+    @apply max-w-[1440px]  px-[16px] md:px-[48px] lg:px-[112px];
+  }
+
+  .section-break {
+    @apply py-[54px] md:py-[64px] lg:py-[80px];
+  }
+
+  .grid-template {
+    @apply grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-[32px];
+  }
+
+  .tight-column {
+    @apply col-span-4 md:col-span-8  lg:col-span-12 xl:col-start-2 xl:col-span-10;
+  }
+
+  .btn {
+    @apply flex justify-center items-center px-[24px] py-[12px] rounded-[4px] hover:opacity-80 active:outline-none active:ring-0;
+  }
+
+  .table-default td,
+  th {
+    @apply py-[16px]  pr-[8px];
+  }
+
+  .table-default th {
+    @apply text-start;
+  }
+
+  .table-default td:first-child,
+  th:first-child {
+    @apply pl-[16px];
+  }
+
+  .table-default thead:first-child {
+    @apply bg-slate-200;
+  }
+
+  .table-default tr:nth-child(even) {
+    @apply bg-slate-100;
+  }
+  .table-default tbody tr:nth-child(odd) {
+    @apply bg-white;
+  }
+
+  .pagination button {
+    @apply py-[4px] px-[8px] font-xs opacity-90;
+  }
+
+  .pagination button {
+    @apply border-l border-t border-b border-slate-400 bg-white font-xs opacity-90;
+  }
+
+  .pagination button:first-child {
+    @apply rounded-l-[4px] border-slate-400 font-xs opacity-90;
+  }
+  .pagination button:last-child {
+    @apply border-r rounded-r-[4px] border-slate-400 font-xs opacity-90;
+  }
+
+  .pagination > .active {
+    @apply bg-blue-50 text-blue-500;
+  }
+
+  .strip-burger {
+    @apply h-[2px] w-[18px] bg-neutral-500 rounded-md;
+  }
+
+
+  .main-heading {
+    @apply font-h3 md:font-h2 lg:font-h1;
+  }
+  .seconds-heading {
+    @apply font-h4 md:font-h3 lg:font-h2;
+  }
+
+  .third-heading {
+    @apply font-h5 md:font-h4 lg:font-h3;
+  }
+  .fourth-heading {
+    @apply font-h6 md:font-h5 lg:font-h4;
+  }
+  ul {
+    list-style: unset;
+  }
+  .clickable {
+    @apply cursor-pointer hover:opacity-80;
+  }
+  
+  .bg-primary-gradient{
+    background: linear-gradient(92.58deg, #00B8F0 0%, #33A8E8 100%);
+  }
+  /* .text-primary{
+    color: linear-gradient(92.58deg, #00B8F0 0%, #33A8E8 100%);
+  } */
+  
+}
