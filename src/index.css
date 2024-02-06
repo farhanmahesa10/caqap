@@ -45,7 +45,7 @@ body {
     @apply font-ubuntu font-medium text-[16px] leading-[24px];
   }
   
-  h1 {
+  /* h1 {
     @apply font-h1;
   }
   h2 {
@@ -62,7 +62,7 @@ body {
   }
   h6 {
     @apply font-h6;
-  }
+  } */
 
   /* font body */
 
