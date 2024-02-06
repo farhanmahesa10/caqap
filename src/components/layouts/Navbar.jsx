@@ -51,7 +51,7 @@ const Navbar = (props) => {
             <div className="flex gap-6 items-center">
               {menus.map((r, i) => {
                 return (
-                  <Link to={r.link}>
+                  <Link to={r.link} key={`nav-mob-${i}`}>
                     <p key={`navbar-${i}`} className="hover:text-primary">
                       {r.label}
                     </p>
@@ -108,7 +108,7 @@ const Navbar = (props) => {
           <div className="  gap-[24px] flex flex-col mt-2 p-4 ">
             {menus.map((r) => {
               return (
-                <Link key={r.key} href={r.link}>
+                <Link key={`nav-` + r.key} href={r.link}>
                   <div className="flex items-center gap-3 clickable">
                     <p
                       className={` ${

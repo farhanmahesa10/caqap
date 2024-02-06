@@ -37,7 +37,10 @@ export default {
     },
     colors: {
       primary: "#00B8F0",
+      "primary-dark": "#1F506A",
       white: "#FDFDFE",
+      "neutral-base": "#48494A",
+      "solid-black": "#151616",
       neutral: {
         50: "#EAECEE",
         100: "#D4D7DB",

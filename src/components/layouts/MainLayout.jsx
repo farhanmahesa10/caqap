@@ -1,10 +1,11 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-const MainLayout = () => {
+const MainLayout = (props) => {
   return (
     <div>
       <Navbar />
+      {props.children}
     </div>
   );
 };
