@@ -16,23 +16,27 @@ const Footer = () => {
               Lihat Map
             </p>
 
-            <div className="mt-4 flex gap-4">
+            <div className="mt-4 flex gap-4 justify-center md:justify-start">
               <button className="bg-white flex rounded-[4px]">
                 <p className="p-3 border-r font-medium border-neutral-400">
                   <FiPhone />
                 </p>
-                <p className="p-3 font-medium">(+62) 0210123123</p>
+                <p className="p-3 font-medium whitespace-nowrap">
+                  (+62) 0210123123
+                </p>
               </button>
               <button className="bg-white flex rounded-[4px]">
                 <p className="p-3 border-r font-medium border-neutral-400">
                   <BsEnvelope />
                 </p>
-                <p className="p-3 font-medium">sales@caqap.id</p>
+                <p className="p-3 font-medium whitespace-nowrap">
+                  sales@caqap.id
+                </p>
               </button>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col  gap-4 items-center  md:items-start">
             <p className="desc text-white lg:text-[17px]">Hubungi Kami</p>
             <p className="desc text-white lg:text-[17px]">Kebijakan Privasi</p>
             <p className="desc text-white lg:text-[17px]">Konsultasi Gratis</p>
