@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import WAIcon from "../../assets/whatsapp.svg";
 const Navbar = (props) => {
   const { activePage } = props;
   const [showSide, setShowSide] = useState(false);
@@ -52,15 +52,20 @@ const Navbar = (props) => {
               {menus.map((r, i) => {
                 return (
                   <Link to={r.link} key={`nav-mob-${i}`}>
-                    <p key={`navbar-${i}`} className="hover:text-primary">
+                    <p
+                      key={`navbar-${i}`}
+                      className={`hover:text-primary ${
+                        r.key === activePage && "text-primary"
+                      }`}
+                    >
                       {r.label}
                     </p>
                   </Link>
                 );
               })}
 
-              <button className="btn bg-primary  text-white w-full">
-                Hubungi Kami
+              <button className="btn bg-primary gap-2  text-white w-full">
+                <img src={WAIcon} alt="wa icon" /> Hubungi Kami
               </button>
             </div>
           </div>
@@ -110,11 +115,7 @@ const Navbar = (props) => {
               return (
                 <Link key={`nav-` + r.key} href={r.link}>
                   <div className="flex items-center gap-3 clickable">
-                    <p
-                      className={` ${
-                        activePage === r.key && "text-primary-main"
-                      }`}
-                    >
+                    <p className={` ${activePage === r.key && "text-primary"}`}>
                       {r.label}
                     </p>
                   </div>

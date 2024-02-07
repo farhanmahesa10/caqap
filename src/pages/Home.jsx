@@ -13,7 +13,7 @@ import {
 
 const Home = () => {
   return (
-    <MainLayout className="bg-red-200">
+    <MainLayout activePage="beranda">
       <HomeHero />
       <HomeWABusiness />
       <HomeMultiChannel />

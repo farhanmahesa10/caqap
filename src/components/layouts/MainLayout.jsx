@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const MainLayout = (props) => {
   return (
     <div>
-      <Navbar />
+      <Navbar activePage={props.activePage} />
       {props.children}
       <Footer />
     </div>
