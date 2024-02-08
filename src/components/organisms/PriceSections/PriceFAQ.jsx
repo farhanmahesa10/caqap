@@ -1,7 +1,7 @@
 import React from "react";
 import { Accordion } from "../../atoms";
 import WAIcon from "../../../assets/whatsapp.svg";
-const ProductFAQ = () => {
+const PriceFAQ = () => {
   return (
     <section className="section-break wrapper">
       <div className="container">
@@ -10,16 +10,14 @@ const ProductFAQ = () => {
         </p>
         <h1 className="mt-3 main-heading-2 text-center">
           {" "}
-          Apa itu Cakap Omnichannel Chat?
+          Apa Saja Paket harga yang tersedia untuk Caqap Omnichannel Chat?
         </h1>
 
         <p className="py-4 desc text-center text-[14px] md:text-[17px]">
-          CRM (Customer Relationship Management) Caqap adalah sistem yang
-          membantu Anda mengelola interaksi dengan pelanggan, menyederhanakan
-          proses penjualan dan pemasaran, serta meningkatkan layanan pelanggan.
-          Ini sangat penting bagi bisnis yang ingin meningkatkan hubungan
-          pelanggan, meningkatkan penjualan, dan mengoptimalkan operasional
-          secara keseluruhan.
+          Kami menawarkan paket harga yang fleksibel untuk memenuhi berbagai
+          kebutuhan bisnis, mulai dari paket Starter hingga paket Enterprise.
+          Paket kami dikelompokkan berdasarkan skala operasi Anda dan
+          fitur-fitur yang Anda perlukan.
         </p>
         <div className="flex justify-center">
           <button className="btn bg-primary text-white gap-2 font-bold mt-6 w-full md:w-auto">
@@ -112,4 +110,4 @@ const ProductFAQ = () => {
   );
 };
 
-export default ProductFAQ;
+export default PriceFAQ;

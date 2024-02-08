@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, Product } from "./pages";
+import { Company, Contact, Home, Price, Product } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +13,18 @@ const router = createBrowserRouter([
   {
     path: "/produk",
     element: <Product />,
+  },
+  {
+    path: "/harga",
+    element: <Price />,
+  },
+  {
+    path: "/perusahaan",
+    element: <Company />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
 ]);
 

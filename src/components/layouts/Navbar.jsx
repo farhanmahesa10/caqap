@@ -64,9 +64,11 @@ const Navbar = (props) => {
                 );
               })}
 
-              <button className="btn bg-primary gap-2  text-white w-full">
-                <img src={WAIcon} alt="wa icon" /> Hubungi Kami
-              </button>
+              <Link to={"/contact"}>
+                <button className="btn bg-primary gap-2  text-white w-full">
+                  <img src={WAIcon} alt="wa icon" /> Hubungi Kami
+                </button>
+              </Link>
             </div>
           </div>
         </div>

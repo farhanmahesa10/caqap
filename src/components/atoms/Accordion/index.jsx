@@ -29,7 +29,7 @@ const Accordion = (props) => {
           onClick: () => setExpanded((prevExpanded) => !prevExpanded),
         })}
       >
-        <span> {title}</span>
+        <span className={`${isOpen && "text-primary"}`}> {title}</span>
         {isOpen ? (
           <>{openIcon || <FaCaretUp />}</>
         ) : (

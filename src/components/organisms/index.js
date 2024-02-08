@@ -14,7 +14,31 @@ import ProductSuperiorFeature from "./ProductSections/ProductSuperiorFeature";
 import ProductTestimonial from "./ProductSections/ProductTestimonial";
 import ProductFAQ from "./ProductSections/ProductFAQ";
 import ProductSales from "./ProductSections/ProductSales";
+import PriceHero from "./PriceSections/PriceHero";
+import PricePackages from "./PriceSections/PricePackages";
+import PriceUMKM from "./PriceSections/PriceUMKM";
+import PriceFAQ from "./PriceSections/PriceFAQ";
+import PriceSales from "./PriceSections/PriceSales";
+import CompanyHero from "./CompanySections/CompanyHero";
+import CompanyWhyCaqap from "./CompanySections/CompanyWhyCaqap";
+import CompanyOptimal from "./CompanySections/CompanyOptimal";
+import CompanyFAQ from "./CompanySections/CompanyFAQ";
+import ContactHero from "./ContactSections/ContactHero";
+import ContactSchedule from "./ContactSections/ContactSchedule";
+import ContactAdress from "./ContactSections/ContactAdress";
 export {
+  ContactAdress,
+  ContactSchedule,
+  ContactHero,
+  CompanyFAQ,
+  CompanyOptimal,
+  CompanyWhyCaqap,
+  CompanyHero,
+  PriceSales,
+  PriceFAQ,
+  PriceUMKM,
+  PricePackages,
+  PriceHero,
   ProductSales,
   ProductFAQ,
   ProductTestimonial,

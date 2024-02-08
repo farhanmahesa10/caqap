@@ -1,3 +1,3 @@
 import Accordion from "./Accordion";
-
-export { Accordion };
+import Input from "./FormItems/Input";
+export { Accordion, Input };
