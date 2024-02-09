@@ -78,11 +78,11 @@ const PriceUMKM = () => {
                 Produk yang digunakan:
               </p>
               <div className="flex flex-col md:flex-row gap-2 md:gap-3 mt-2 ">
-                <button className="btn py-2 px-4 text-[14px] md:text-[17px] text-primary md:font-bold border border-primary">
+                <button className="btn py-2 gap-2 px-4 text-[14px] md:text-[17px] text-primary md:font-bold border border-primary">
                   <img src={ChatbotImg} alt="icon" /> #WhatsApp Bisnis API
                 </button>
-                <button className="btn py-2 px-4 text-[14px] md:text-[17px] text-primary md:font-bold border border-primary">
-                  #CaqapOmnichannelChat
+                <button className="btn py-2 gap-2 px-4 text-[14px] md:text-[17px] text-primary md:font-bold border border-primary">
+                  <img src={ChatbotImg} alt="icon" /> #CaqapOmnichannelChat
                 </button>
               </div>
             </div>
