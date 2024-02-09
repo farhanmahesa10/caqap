@@ -11,10 +11,15 @@ const HomeHero = () => {
           Multi-saluran, satu platform untuk komunikasi
         </h5>
         <h1 className="main-heading text-center w-full mt-[12px]">
-          Solusi Omnichannel <span className="text-primary">CRM Terbaik</span>
+          Solusi Omnichannel{" "}
+          <span className="text-primary md:border-2 relative md:border-primary md:bg-[#E5F9FF] md:whitespace-nowrap md:px-2">
+            <span className="hidden md:block absolute -top-[2px] left-[45%] h-1 w-[25px] bg-white"></span>
+            CRM Terbaik
+            <span className="hidden md:block absolute -bottom-[2px] left-[45%] h-1 w-[25px] bg-white"></span>
+          </span>
         </h1>
         <p className="mt-[10px] lg:mt-[24px] text-center desc">
-          Dengan <span className="text-primary">Caqap CRM</span>,
+          Dengan <span className="text-primary ">Caqap CRM</span>,
           sentralisasikan data pelanggan dan prospek untuk strategi peningkatan
           penjualan, pemasaran, dan layanan pelanggan yang lebih efisien dan
           inovatif hingga 75%.
