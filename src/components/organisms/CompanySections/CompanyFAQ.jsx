@@ -30,7 +30,7 @@ const CompanyFAQ = () => {
           </div>
 
           <div className="">
-            <div className="py-[12px]">
+            <div className="">
               <Accordion
                 titleClassName={"text-start"}
                 title={
@@ -51,7 +51,7 @@ const CompanyFAQ = () => {
                 </p>
               </Accordion>
             </div>
-            <div className="py-[12px]">
+            <div className="">
               <Accordion
                 title={
                   <span className="font-bold text-[17px]">
@@ -70,7 +70,7 @@ const CompanyFAQ = () => {
                 </p>
               </Accordion>
             </div>
-            <div className="py-[12px]">
+            <div className="">
               <Accordion
                 title={
                   <span className="font-bold text-[17px]">
@@ -89,7 +89,7 @@ const CompanyFAQ = () => {
                 </p>
               </Accordion>
             </div>
-            <div className="py-[12px]">
+            <div className="">
               <Accordion
                 title={
                   <span className="font-bold text-[17px]">

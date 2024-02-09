@@ -43,7 +43,12 @@ const CompanyWhyCaqap = () => {
     <section className="wrapper section-break">
       <div className="container">
         <h2 className="text-center main-heading-2">
-          Mengapa Harus Memilih Caqap CRM
+          Mengapa Harus Memilih{" "}
+          <span className="text-primary md:border-2 relative md:border-primary md:bg-[#E5F9FF] md:whitespace-nowrap md:px-2">
+            <span className="hidden md:block absolute -top-[2px] left-[45%] h-1 w-[25px] bg-white"></span>
+            Caqap CRM
+            <span className="hidden md:block absolute -bottom-[2px] left-[45%] h-1 w-[25px] bg-white"></span>
+          </span>
         </h2>
         <div className="mt-[24px] md:mt-[50px]  grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-7">
           {data.map((r, i) => {

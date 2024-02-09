@@ -6,7 +6,7 @@ const ProductTestimonial = () => {
       <div className="container">
         <p className="md:font-bold desc text-primary">Testimonial</p>
         <h1 className="mt-3 main-heading-2 ">
-          Kata Mereka Yang Telah Menggunakan
+          Kata Mereka Yang Telah Menggunakan{" "}
           <span className="text-primary">Caqap CRM</span>
         </h1>
         <div className="md:hidden mt-4">

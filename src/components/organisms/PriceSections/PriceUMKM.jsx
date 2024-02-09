@@ -34,7 +34,7 @@ const PriceUMKM = () => {
         <h2 className="main-heading-2 text-center md:text-start">
           Caqap Membantu UMKM Dalam Mengembangkan Usaha Dari Berbagai Industri
         </h2>
-        <div className="mt-[50px] flex justify-center">
+        <div className="mt-[50px] flex md:justify-center overflow-x-auto overflow-thin">
           <div className="py-1 px-2 md:py-3 md:px-4 flex bg-[#F1F8FB] gap-[18px]">
             {data.map((r, i) => {
               return (
