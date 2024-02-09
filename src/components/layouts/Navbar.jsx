@@ -38,7 +38,7 @@ const Navbar = (props) => {
       <div className="wrapper hidden md:flex">
         <div className="container">
           <div
-            className="py-[17px]  px-3 bg-white flex justify-between"
+            className="py-[17px]  px-3 bg-white flex justify-between items-center"
             style={{
               boxShadow: "0px 15px 24px 0px #10679633",
             }}
@@ -74,7 +74,7 @@ const Navbar = (props) => {
         </div>
       </div>
       <div
-        className="pt-[42px] pb-[18px] px-4 bg-white flex justify-between md:hidden"
+        className=" py-[18px] px-4 bg-white flex justify-between md:hidden items-center"
         style={{
           boxShadow: "0px 15px 24px 0px #10679633",
         }}
@@ -115,7 +115,7 @@ const Navbar = (props) => {
           <div className="  gap-[24px] flex flex-col mt-2 p-4 ">
             {menus.map((r) => {
               return (
-                <Link key={`nav-` + r.key} href={r.link}>
+                <Link key={`nav-` + r.key} to={r.link}>
                   <div className="flex items-center gap-3 clickable">
                     <p className={` ${activePage === r.key && "text-primary"}`}>
                       {r.label}
@@ -125,7 +125,7 @@ const Navbar = (props) => {
               );
             })}
             <div className="w-full">
-              <Link href={"/login"} className="w-full">
+              <Link href={"#"} className="w-full">
                 <button className="btn bg-primary-gradient  text-white w-full">
                   Hubungi Kami
                 </button>
