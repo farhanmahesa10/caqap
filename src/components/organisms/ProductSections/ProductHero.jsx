@@ -15,9 +15,14 @@ const ProductHero = () => {
                 />
               </div>
               <div className="order-2 md:order-1">
-                <h1 className="main-heading">
+                <h1 className="main-heading  md:leading-[45px] lg:leading-[72px]">
                   Revolusikan layanan pelanggan dengan{" "}
-                  <span className="text-primary">Caqap Omnichannel</span> chat
+                  <span className="text-primary md:border-2 relative md:border-primary md:bg-[#E5F9FF] md:whitespace-nowrap md:px-2">
+                    <span className="hidden md:block absolute -top-[2px] left-[45%] h-1 w-[64px] bg-white"></span>
+                    Caqap Omnichannel
+                    <span className="hidden md:block absolute -bottom-[2px] left-[45%] h-1 w-[64px] bg-white"></span>
+                  </span>{" "}
+                  chat
                 </h1>
                 <p className="mt-3 desc">
                   Hubungkan setiap touchpoints bisnis dan tingkatkan engagement

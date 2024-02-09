@@ -12,7 +12,12 @@ const HomeOfficialPartner = () => {
             Partner Resmi WhatsApp Business API
           </p>
           <h1 className="mt-3 main-heading text-center">
-            Dapatkan <span className="text-[#25B63C]">Centang Hijau</span>{" "}
+            Dapatkan{" "}
+            <span className="text-[#25B63C] md:border-2 relative md:border-[#25B63C] md:bg-[#DFFEE4] md:whitespace-nowrap md:px-2 md:py-1">
+              <span className="hidden md:block absolute -top-[2px] left-[45%] h-1 w-[25px] bg-white"></span>
+              Centang Hijau
+              <span className="hidden md:block absolute -bottom-[2px] left-[45%] h-1 w-[25px] bg-white"></span>
+            </span>{" "}
             WhatsApp
           </h1>
           <p className="mt-3 text-center">

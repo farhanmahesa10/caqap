@@ -44,7 +44,12 @@ const ProductSuperiorFeature = () => {
     <section className="wrapper section-break">
       <div className="container">
         <h2 className="main-heading-2 ">
-          Fitur Unggulan <span className="text-primary">Caqap Omnichannel</span>{" "}
+          Fitur Unggulan{" "}
+          <span className="text-primary md:border-2 relative md:border-primary md:bg-[#E5F9FF] md:whitespace-nowrap md:px-2">
+            <span className="hidden md:block absolute -top-[2px] left-[38%] h-1 w-[64px] bg-white"></span>
+            Caqap Omnichannel
+            <span className="hidden md:block absolute -bottom-[2px] left-[38%] h-1 w-[64px] bg-white"></span>
+          </span>{" "}
           Panel
         </h2>
         <div className="mt-6 md:mt-[32px] lg:mt-[50px] grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-7">
