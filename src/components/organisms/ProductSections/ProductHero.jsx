@@ -34,7 +34,7 @@ const ProductHero = () => {
                 </button>
               </div>
             </div>
-            <div className=" ">
+            <div className=" mt-[100px] md:mt-[50px]">
               <p className="desc">
                 Perusahaan yang telah menggunakan Produk Kami:
               </p>

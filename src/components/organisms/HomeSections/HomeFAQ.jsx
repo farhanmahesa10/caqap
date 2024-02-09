@@ -53,7 +53,7 @@ const HomeFAQ = () => {
         </div>
 
         <div className="mt-[40px] md:mt-[80px]">
-          <div className="py-[12px]">
+          <div className="">
             <Accordion
               title={
                 <span className="font-bold text-[17px]">
@@ -73,7 +73,7 @@ const HomeFAQ = () => {
               </p>
             </Accordion>
           </div>
-          <div className="py-[12px]">
+          <div className="">
             <Accordion
               title={
                 <span className="font-bold text-[17px]">
@@ -92,7 +92,7 @@ const HomeFAQ = () => {
               </p>
             </Accordion>
           </div>
-          <div className="py-[12px]">
+          <div className="">
             <Accordion
               title={
                 <span className="font-bold text-[17px]">
@@ -111,7 +111,7 @@ const HomeFAQ = () => {
               </p>
             </Accordion>
           </div>
-          <div className="py-[12px]">
+          <div className="">
             <Accordion
               title={
                 <span className="font-bold text-[17px]">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import WAIcon from "../../assets/whatsapp.svg";
+import { FaTimes } from "react-icons/fa";
 const Navbar = (props) => {
   const { activePage } = props;
   const [showSide, setShowSide] = useState(false);
@@ -93,7 +94,7 @@ const Navbar = (props) => {
       </div>
       {/* side menu */}
       <div
-        className={`w-screen h-screen fixed top-0 duration-100 backdrop-blur-sm ${
+        className={`w-screen h-screen z-50 fixed top-0 duration-100 backdrop-blur-sm ${
           !showSide && "translate-x-full"
         }`}
         onClick={() => {
@@ -110,7 +111,7 @@ const Navbar = (props) => {
         >
           <div className="flex-shrink-0 border-b p-4 flex justify-between items-center">
             <img src="/images/logo.png" alt="logo" className="h-[40px]" />
-            {/* <FaTimes className="clickable" onClick={() => setShowSide(false)} /> */}
+            <FaTimes className="clickable" onClick={() => setShowSide(false)} />
           </div>
           <div className="  gap-[24px] flex flex-col mt-2 p-4 ">
             {menus.map((r) => {

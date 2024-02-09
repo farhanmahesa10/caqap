@@ -16,7 +16,7 @@ const Footer = () => {
               Lihat Map
             </p>
 
-            <div className="mt-4 flex gap-4 justify-center md:justify-start">
+            <div className="mt-4 flex gap-4 justify-center md:justify-start flex-wrap">
               <button className="bg-white flex rounded-[4px]">
                 <p className="p-3 border-r font-medium border-neutral-400">
                   <FiPhone />
