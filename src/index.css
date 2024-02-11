@@ -221,6 +221,6 @@ body {
   }
 
   p {
-    @apply text-neutral-base;
+    @apply text-neutral-base font-ubuntu;
   }
 }

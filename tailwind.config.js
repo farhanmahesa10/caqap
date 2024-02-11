@@ -19,10 +19,12 @@ export default {
         lg: "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)",
         xl: "0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)",
         "2xl": "0px 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        product: "0px 24px 24px 0px #10679633",
       },
       animation: {
         marquee: "marquee 20s linear infinite",
         marquee2: "marquee2 5s linear infinite",
+        fade: "fadeIn .5s ease-in-out",
       },
       keyframes: {
         marquee: {
@@ -32,6 +34,10 @@ export default {
         marquee2: {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0%)" },
+        },
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
         },
       },
     },

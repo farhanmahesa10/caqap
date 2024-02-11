@@ -1,33 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ChatbotImg from "../../../assets/chatbot-black.svg";
 const PriceUMKM = () => {
   const [activeData, setActiveData] = useState("Fashion");
+  const [showDetail, setShowDetail] = useState(true);
+
   const [data, setData] = useState([
     {
       type: "Fashion",
-      title: "",
-      desc: "",
-      tags: [],
+      title:
+        "Hanum Fashion meningkatkan kualitas layanan pelanggan secara optimal",
+      desc: "“Peningkatan 5% active user dalam Hanum Fashion setelah menjalankan campaign edukasi melalui Whatsapp dan channel lainnya.”",
+      tags: ["WhatsApp Bisnis API", "CaqapOmnichannelChat"],
     },
     {
       type: "Logistik",
       title: "",
-      desc: "",
-      tags: [],
+      title:
+        "Hanum Logistik meningkatkan kualitas layanan pelanggan secara optimal",
+      desc: "“Peningkatan 5% active user dalam Hanum Fashion setelah menjalankan campaign edukasi melalui Whatsapp dan channel lainnya.”",
+      tags: ["WhatsApp Bisnis API", "CaqapOmnichannelChat"],
     },
     {
       type: "FnB",
       title: "",
-      desc: "",
-      tags: [],
+      title: "Hanum FnB meningkatkan kualitas layanan pelanggan secara optimal",
+      desc: "“Peningkatan 5% active user dalam Hanum Fashion setelah menjalankan campaign edukasi melalui Whatsapp dan channel lainnya.”",
+      tags: ["WhatsApp Bisnis API", "CaqapOmnichannelChat"],
     },
     {
       type: "Pariwisata",
-      title: "",
-      desc: "",
-      tags: [],
+      title:
+        "Hanum Pariwisata meningkatkan kualitas layanan pelanggan secara optimal",
+      desc: "“Peningkatan 5% active user dalam Hanum Fashion setelah menjalankan campaign edukasi melalui Whatsapp dan channel lainnya.”",
+      tags: ["WhatsApp Bisnis API", "CaqapOmnichannelChat"],
     },
   ]);
+
+  const displayedData = useMemo(() => {
+    return data.find((r) => r.type === activeData);
+  }, [activeData]);
+
+  useEffect(() => {
+    setShowDetail(false);
+    setTimeout(() => {
+      setShowDetail(true);
+    }, 200);
+  }, [activeData]);
+
   return (
     <div className="wrapper section-break">
       <div className="container">
@@ -54,7 +73,11 @@ const PriceUMKM = () => {
           </div>
         </div>
 
-        <div className="mt-[24px] md:mt-[50px] flex flex-col md:flex-row  justify-between gap-[40px] lg:gap-[80px]">
+        <div
+          className={`
+            ${!showDetail ? "opacity-0" : "opacity-100"}
+          mt-[24px] transition-all duration-200 md:mt-[50px] flex flex-col md:flex-row  justify-between gap-[40px] lg:gap-[80px]`}
+        >
           <div className="w-full">
             <img
               src="/images/price/umkm.png"
@@ -64,13 +87,10 @@ const PriceUMKM = () => {
           </div>
           <div className="max-w-[600px] w-full">
             <h2 className="seconds-heading md:text-[32px]">
-              Hanum Fashion meningkatkan kualitas layanan pelanggan secara
-              optimal
+              {displayedData.title}
             </h2>
             <p className="desc mt-4 text-[#375761] md:text-[20px]">
-              “Peningkatan 5% active user dalam Hanum Fashion setelah
-              menjalankan campaign edukasi melalui Whatsapp dan channel
-              lainnya.”
+              {displayedData.desc}
             </p>
 
             <div className="mt-[25px] md:mt-[50px]">
@@ -78,12 +98,16 @@ const PriceUMKM = () => {
                 Produk yang digunakan:
               </p>
               <div className="flex flex-col md:flex-row gap-2 md:gap-3 mt-2 ">
-                <button className="btn py-2 gap-2 px-4 text-[14px] md:text-[17px] text-primary md:font-bold border border-primary">
-                  <img src={ChatbotImg} alt="icon" /> #WhatsApp Bisnis API
-                </button>
-                <button className="btn py-2 gap-2 px-4 text-[14px] md:text-[17px] text-primary md:font-bold border border-primary">
-                  <img src={ChatbotImg} alt="icon" /> #CaqapOmnichannelChat
-                </button>
+                {displayedData?.tags?.map((r, i) => {
+                  return (
+                    <button
+                      key={`tags--${i}`}
+                      className="btn py-2 gap-2 px-4 text-[14px] md:text-[17px] text-primary md:font-bold border border-primary"
+                    >
+                      <img src={ChatbotImg} alt="icon" /> #{r}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ const HomeHero = () => {
   return (
     <section className="wrapper pt-[40px] lg:pt-[50px]">
       <div className="container">
-        <div className="bg-[url('/images/line-vector.png')] flex justify-center">
+        <div className="bg-[url('/images/line-vector.png')] flex justify-center bg-no-repeat ">
           <img src="/images/home/hero.png" alt="home-hero" />
         </div>
         <h5 className=" text-primary subtitle text-center">

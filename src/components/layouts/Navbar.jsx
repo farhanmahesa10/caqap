@@ -1,33 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import WAIcon from "../../assets/whatsapp.svg";
-import { FaTimes } from "react-icons/fa";
+import TimesImg from "../../assets/timescircle.svg";
+import ProductDropdown from "./ProductDropdown";
 const Navbar = (props) => {
   const { activePage } = props;
   const [showSide, setShowSide] = useState(false);
+  const [showProductNav, setShowProductNav] = useState(false);
+
   // #7D5DFF color active
-  const [menus, setMenus] = useState([
-    {
-      link: "/",
-      label: "Beranda",
-      key: "beranda",
-    },
-    {
-      link: "/produk",
-      label: "Produk",
-      key: "produk",
-    },
-    {
-      link: "/harga",
-      label: "Harga",
-      key: "harga",
-    },
-    {
-      link: "/perusahaan",
-      label: "Perusahaan",
-      key: "perusahaan",
-    },
-  ]);
+
+  const toggleProductNav = useCallback(() => {
+    setShowProductNav(!showProductNav);
+  }, [showProductNav]);
+
+  const menus = useMemo(() => {
+    return [
+      {
+        link: "/",
+        label: "Beranda",
+        key: "beranda",
+      },
+      {
+        link: "#",
+        customClick: (e) => {
+          setShowProductNav(!showProductNav);
+        },
+        label: "Produk",
+        key: "produk",
+      },
+      {
+        link: "/harga",
+        label: "Harga",
+        key: "harga",
+      },
+      {
+        link: "/perusahaan",
+        label: "Perusahaan",
+        key: "perusahaan",
+      },
+    ];
+  }, [showProductNav]);
 
   useEffect(() => {
     window.addEventListener("resize", function (event) {
@@ -35,8 +48,9 @@ const Navbar = (props) => {
     });
   }, []);
   return (
-    <div>
-      <div className="wrapper hidden md:flex">
+    <div className="mb-[103px]">
+      {/* desktop nav */}
+      <div className="wrapper hidden md:flex fixed w-full top-0 pt-[24px] backdrop-blur-md z-40">
         <div className="container">
           <div
             className="py-[17px]  px-3 bg-white flex justify-between items-center"
@@ -51,10 +65,23 @@ const Navbar = (props) => {
             </div>
             <div className="flex gap-6 items-center">
               {menus.map((r, i) => {
-                return (
-                  <Link to={r.link} key={`nav-mob-${i}`}>
+                if (r.customClick) {
+                  return (
                     <p
-                      key={`navbar-${i}`}
+                      key={`navbar-desk-${i}`}
+                      className={`hover:text-primary hover:cursor-pointer ${
+                        r.key === activePage && "text-primary"
+                      }`}
+                      onClick={r.customClick}
+                    >
+                      {r.label}
+                    </p>
+                  );
+                }
+
+                return (
+                  <Link to={r.link} key={`nav---${i}`}>
+                    <p
                       className={`hover:text-primary ${
                         r.key === activePage && "text-primary"
                       }`}
@@ -72,10 +99,13 @@ const Navbar = (props) => {
               </Link>
             </div>
           </div>
+          <div className="h-[1px] bg-gradient-to-r from-white  via-[#00B8F0] to-white "></div>
         </div>
       </div>
+
+      {/* mobil nav */}
       <div
-        className=" py-[18px] px-4 bg-white flex justify-between md:hidden items-center"
+        className="fixed w-full top-0  backdrop-blur-md z-40 pb-[18px] pt-[40px] rounded-[4px]  px-4 bg-white flex justify-between md:hidden items-center"
         style={{
           boxShadow: "0px 15px 24px 0px #10679633",
         }}
@@ -92,49 +122,71 @@ const Navbar = (props) => {
           <img src="/images/whatsapp.png" alt="whatsapp" />
         </div>
       </div>
+
       {/* side menu */}
       <div
-        className={`w-screen h-screen z-50 fixed top-0 duration-100 backdrop-blur-sm ${
-          !showSide && "translate-x-full"
-        }`}
-        onClick={() => {
-          setShowSide(false);
+        className={`fixed md:hidden overflow-hidden w-screen top-0 z-[60]  bg-white ${
+          !showSide ? "h-0" : "h-screen"
+        } transition-all duration-200`}
+        onClick={(e) => {
+          e.stopPropagation();
         }}
       >
-        <div
-          className={`fixed md:hidden top-0 -right-2 z-[70] duration-200 w-80 h-screen overflow-y-auto transition-transform  shadow-lg bg-white ${
-            !showSide && "translate-x-full"
-          }`}
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          <div className="flex-shrink-0 border-b p-4 flex justify-between items-center">
-            <img src="/images/logo.png" alt="logo" className="h-[40px]" />
-            <FaTimes className="clickable" onClick={() => setShowSide(false)} />
-          </div>
-          <div className="  gap-[24px] flex flex-col mt-2 p-4 ">
-            {menus.map((r) => {
+        <div className="flex-shrink-0 w-full p-[24px] flex flex-col  items-center mt-[120px] gap-[24px]">
+          <img
+            src="/images/logo.png"
+            alt="logo"
+            className="h-[40px] flex-shrink-0 flex-grow-0"
+          />
+          {menus.map((r) => {
+            if (r.customClick) {
               return (
-                <Link key={`nav-` + r.key} to={r.link}>
-                  <div className="flex items-center gap-3 clickable">
-                    <p className={` ${activePage === r.key && "text-primary"}`}>
-                      {r.label}
-                    </p>
-                  </div>
-                </Link>
+                <div
+                  className="flex items-center gap-3 clickable p-1"
+                  onClick={r.customClick}
+                  key={`nav-` + r.key}
+                >
+                  <p
+                    className={` ${
+                      activePage === r.key && "text-primary"
+                    } text-ubuntu text-[24px]`}
+                  >
+                    {r.label}
+                  </p>
+                </div>
               );
-            })}
-            <div className="w-full">
-              <Link href={"#"} className="w-full">
-                <button className="btn bg-primary-gradient  text-white w-full">
-                  Hubungi Kami
-                </button>
+            }
+            return (
+              <Link key={`nav-` + r.key} to={r.link}>
+                <div className="flex items-center gap-3 clickable p-1">
+                  <p
+                    className={` ${
+                      activePage === r.key && "text-primary"
+                    } text-ubuntu text-[24px]`}
+                  >
+                    {r.label}
+                  </p>
+                </div>
               </Link>
-            </div>
+            );
+          })}
+          <Link href={"#"} className="w-full">
+            <button className="btn bg-primary-gradient gap-2  text-white w-full">
+              <img src={WAIcon} alt="WA Icon" /> Hubungi Kami
+            </button>
+          </Link>
+
+          <div className="clickable" onClick={() => setShowSide(false)}>
+            <img src={TimesImg} alt="times circle" />
           </div>
         </div>
       </div>
+
+      {/* product nav*/}
+
+      {showProductNav && (
+        <ProductDropdown open={showProductNav} setOpen={setShowProductNav} />
+      )}
     </div>
   );
 };

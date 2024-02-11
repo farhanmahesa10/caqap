@@ -476,7 +476,10 @@ const PricePackages = () => {
 
                 {pack.features.map((r, i) => {
                   return (
-                    <div className={`packages-2-${index} flex flex-col gap-3`}>
+                    <div
+                      className={`packages-2-${index} flex flex-col gap-3`}
+                      key={`pp-` + i}
+                    >
                       <p className=" font-bold text-[15px] text-solid-black">
                         {r.title}
                       </p>
