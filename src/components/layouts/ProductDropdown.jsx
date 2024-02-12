@@ -7,7 +7,6 @@ import Customermg from "../../assets/customer.svg";
 import { FiPhone } from "react-icons/fi";
 import { BsEnvelope } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import ClickAwayListener from "react-click-away-listener";
 import OutsideClickHandler from "react-outside-click-handler";
 
 const ProductDropdown = ({ open, setOpen }) => {
