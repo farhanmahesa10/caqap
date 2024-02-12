@@ -104,23 +104,26 @@ const Navbar = (props) => {
       </div>
 
       {/* mobil nav */}
-      <div
-        className="fixed w-full top-0  backdrop-blur-md z-40 py-[18px] rounded-[4px]  px-4 bg-white flex justify-between md:hidden items-center"
-        style={{
-          boxShadow: "0px 15px 24px 0px #10679633",
-        }}
-      >
-        <div className="clickable" onClick={() => setShowSide(true)}>
-          <img src="/images/burger.png" alt="humburger" />
+      <div className="fixed w-full top-0">
+        <div
+          className="  backdrop-blur-md z-40 py-[18px] rounded-[4px]  px-4 bg-white flex justify-between md:hidden items-center"
+          style={{
+            boxShadow: "0px 15px 24px 0px #10679633",
+          }}
+        >
+          <div className="clickable" onClick={() => setShowSide(true)}>
+            <img src="/images/burger.png" alt="humburger" />
+          </div>
+          <div className="clickable">
+            <Link to={"/"}>
+              <img src="/images/logo.png" alt="logo" />
+            </Link>
+          </div>
+          <div className="py-[6px] px-[11px] bg-[#D8FFDE] rounded-[4px] clickable">
+            <img src="/images/whatsapp.png" alt="whatsapp" />
+          </div>
         </div>
-        <div className="clickable">
-          <Link to={"/"}>
-            <img src="/images/logo.png" alt="logo" />
-          </Link>
-        </div>
-        <div className="py-[6px] px-[11px] bg-[#D8FFDE] rounded-[4px] clickable">
-          <img src="/images/whatsapp.png" alt="whatsapp" />
-        </div>
+        <div className="h-[1px] bg-gradient-to-r from-white  via-[#00B8F0] to-white "></div>
       </div>
 
       {/* side menu */}
