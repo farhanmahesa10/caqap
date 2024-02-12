@@ -105,7 +105,7 @@ const Navbar = (props) => {
 
       {/* mobil nav */}
       <div
-        className="fixed w-full top-0  backdrop-blur-md z-40 pb-[18px] pt-[40px] rounded-[4px]  px-4 bg-white flex justify-between md:hidden items-center"
+        className="fixed w-full top-0  backdrop-blur-md z-40 py-[18px] rounded-[4px]  px-4 bg-white flex justify-between md:hidden items-center"
         style={{
           boxShadow: "0px 15px 24px 0px #10679633",
         }}

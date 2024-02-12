@@ -8,6 +8,7 @@ import { FiPhone } from "react-icons/fi";
 import { BsEnvelope } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import ClickAwayListener from "react-click-away-listener";
+import OutsideClickHandler from "react-outside-click-handler";
 
 const ProductDropdown = ({ open, setOpen }) => {
   const navigate = useNavigate();
@@ -15,8 +16,8 @@ const ProductDropdown = ({ open, setOpen }) => {
     <>
       <div className="fixed  top-0 md:top-[103px] w-screen md:w-full h-screen bg-white md:bg-opacity-0 md:h-auto  z-[61] md:wrapper ">
         <div className="md:container ">
-          <ClickAwayListener
-            onClickAway={() => {
+          <OutsideClickHandler
+            onOutsideClick={() => {
               setOpen(false);
             }}
           >
@@ -45,7 +46,12 @@ const ProductDropdown = ({ open, setOpen }) => {
                 <p className="desc hidden md:block text-primary-dark md:text-[19px] md:font-bold">
                   Semua Produk
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[12px]  ">
+                <div
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[12px]  "
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                >
                   <div
                     className="p-2 rounded-[4px] bg-[#F8FBFC] border border-[#D1E4EA] clickable"
                     onClick={() => {
@@ -156,7 +162,7 @@ const ProductDropdown = ({ open, setOpen }) => {
               </div>
               <div className="h-[1px] bg-gradient-to-r from-white  via-[#00B8F0] to-white "></div>
             </>
-          </ClickAwayListener>
+          </OutsideClickHandler>
         </div>
       </div>
     </>
